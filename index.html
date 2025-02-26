@@ -3,10 +3,86 @@
 <html lang="en">
     <head>
         <title>POPCAT CLASSIC</title>
+        <style>
+            /*容器 box 高度100vh flex排版 垂直 置中*/
+            /*flex 方向要垂直排列*/
+            /*容器樣式 背景顏色 #bdaa90*/
+
+            .title-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: 100vh;
+                background-color: #bdaa90;
+            }
+            /*標題圖片樣式*/
+            /*標題 box 寬度80% 上方間距 2em*/
+            /*標題圖片寬度100%*/
+            /*標題box最大寬度600%*/
+            .title {
+                width: 80%;
+                margin-top: 2em;
+                max-width: 600px;
+            }
+
+            /*文字 box 寬度100%*/
+            /*文字樣式 文字置中 文字白色 大小80px 邊框3px 黑色 寬度100px 高度100px 圓角50% 上方間距2em*/
+
+            .cat-img {
+                width: 100%;
+                text-align: center;
+                color: white;
+                font-size: 5em;
+                -webkit-text-stroke: 3px black;
+            }
+
+            /*文字 div 背景圖片 用 id 設定imgs/p.png 圖片靠下 填滿容器contain 不重複*/
+
+            #p {
+                background-image: url('imgs/p.png');
+                background-position: bottom;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            #op {
+                background-image: url('imgs/op.png');
+                background-position: bottom;
+                background-size: contain;
+                background-repeat: no-repeat;
+                flex-grow: 1;
+            }
+            /*文字 div 排版填滿剩餘空間*/
+            #p {
+                flex-grow: 1;
+            }
+            /*body box 編距為0*/
+            /*字型 sans-serif*/
+            /*防止文字被選取*/
+            body {
+                margin: 0;
+                font-family: sans-serif;
+                user-select: none;
+            }
+            /*標題 box 最大寬度 600px*/
+            .title {
+                max-width: 600px;
+            }
+            /*文字 box 最大寬度 800px*/
+            .cat-img {
+                max-width: 800px;
+            }
+
+
+        </style>
     </head>
 
     <body>
-        <img class="title" src="imgs/popcat.svg" alt="POPCAT">
-        <div class="cat-img" id="p">0</div>
+    <!--<新增容器包裹標題圖片與點擊數字>-->
+        <div class="title-container">
+            <img class="title" src="imgs/popcat.svg" alt="POPCAT">
+            <div class="cat-img" id="p">0</div>
+        </div>
+
+
     </body>
 </html>
